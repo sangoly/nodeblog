@@ -5,9 +5,13 @@ cd $PREFIX
 
 while [ 1 ]
 do
-    ps x -u $USER | grep 'node' | awk '{print $1}' | xargs kill -9 > /dev/null  2>&1
+    # kill curr processes
+    ps x -u $USER | egrep 'node|grunt' | awk '{print $1}' | xargs kill -9 > /dev/null  2>&1
+    # start new processes
     DEBUG=nodeblog:* ./bin/www
-    
+    grunt &
+
+    # if server is dead, re start it 4 seconds later
     echo ""
     for ((i=1;i<=4;i++))
     do 
