@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    form(action='/users/register',method='post')
+        input(name="name",type="text")
+        input(name="passwd",type="password")
+        input(type="submit",value="提交")
+
