@@ -2,8 +2,9 @@ module.exports = (grunt) ->
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+
         uglify: {
-            target: {
+            dist: {
                 options: {
                     banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %>*/\n'
                     mangle: {
@@ -67,4 +68,4 @@ module.exports = (grunt) ->
     grunt.loadNpmTasks('grunt-contrib-coffee')
     grunt.loadNpmTasks('grunt-contrib-watch')
 
-    grunt.registerTask('default', ['uglify'])
+    grunt.registerTask('default', ['uglify', 'coffee', 'sass'])

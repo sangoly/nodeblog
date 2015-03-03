@@ -6,10 +6,10 @@ cd $PREFIX
 while [ 1 ]
 do
     # kill curr processes
-    ps x -u $USER | egrep 'node|grunt' | awk '{print $1}' | xargs kill -9 > /dev/null  2>&1
+    ps x -u $USER | egrep 'supervisor|node|grunt' | awk '{print $1}' | xargs kill -9 > /dev/null  2>&1
     # start new processes
-    DEBUG=nodeblog:* ./bin/www
-    grunt &
+    DEBUG=nodeblog:* supervisor ./bin/www &
+    grunt watch 
 
     # if server is dead, re start it 4 seconds later
     echo ""
