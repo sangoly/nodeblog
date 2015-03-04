@@ -1,3 +1,6 @@
+-var heads = ["首页", "轻松时刻", "智慧空间"]
+-var footer_words = "我是页脚，不知道要写啥，先放这"
+
 doctype html
 html
   head
@@ -5,4 +8,33 @@ html
     link(rel='stylesheet', href='/css/style.css')
     link(rel='stylesheet', href='/css/bootstrap.min.css')
   body
+    block header
+      #header
+        .container(role="navigation")
+          ul.nav.nav-tabs
+            -each val, index in heads
+              li(role="presentation") 
+                if index == 0
+                  a.active(href="#") #{heads[index]}
+                else
+                  a(href="#") #{heads[index]}
+            div.auth
+              a.btn.btn-primary(href="/users/login") 登录
+              &nbsp;
+              a.btn.btn-default(href="/users/register") 注册
+
+    #alert
+      if err
+        .alert.alert-warning.container(role="alert") #{err}
+
     block content
+
+    block script
+      script(src="/js/min/jquery-1.11.2.min.js")
+      script(src="/js/min/bootstrap.min.js")
+      script(src="/js/min/avalon.min.js")
+      script(src="/js/min/nodeblog.min.js")
+
+    block footer
+      #footer
+        | #{footer_words}

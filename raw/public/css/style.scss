@@ -1,0 +1,42 @@
+#header {
+    .container[role="navigation"] {
+        padding-top: 10px;
+
+        .nav {
+            font-size:20px;
+        }
+    }
+
+    .auth {
+        padding-top: 5px;
+        text-align: right;
+    }
+}
+
+#alert {
+    padding-top: 15px;
+    .alert {
+        text-align: center;
+    }
+}
+
+#login {
+    padding-top: 50px;
+
+    .container {
+        background-color: #eee;
+
+        form {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            text-algin: center;
+        }
+    }  
+}
+
+#footer {
+    font-size: 25px;
+    margin-top: 30px;
+    margin-left: 20px;
+    text-align: center;
+}

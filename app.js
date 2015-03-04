@@ -23,6 +23,8 @@
 
   app.set('view engine', 'jade');
 
+  app.use(favicon(__dirname + '/public/favicon.ico'));
+
   app.use(logger('dev'));
 
   app.use(bodyParser.json());

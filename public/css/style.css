@@ -1,8 +1,36 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+#header .container[role="navigation"] {
+  padding-top: 10px;
+}
+#header .container[role="navigation"] .nav {
+  font-size: 20px;
+}
+#header .auth {
+  padding-top: 5px;
+  text-align: right;
 }
 
-a {
-  color: #00B7FF;
+#alert {
+  padding-top: 15px;
+}
+#alert .alert {
+  text-align: center;
+}
+
+#login {
+  padding-top: 50px;
+}
+#login .container {
+  background-color: #eee;
+}
+#login .container form {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  text-algin: center;
+}
+
+#footer {
+  font-size: 25px;
+  margin-top: 30px;
+  margin-left: 20px;
+  text-align: center;
 }
