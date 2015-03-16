@@ -1,5 +1,43 @@
+mixin panel(head, nums, val)
+  .panel
+    .panel-heading 
+      | #{head} 
+      span.badge #{nums}
+    .panel-body #{val}
+    .panel-footer
+      a(href="javascript:add()")
+        span.glyphicon.glyphicon-plus(aria-hidden="true")
+      &nbsp 
+      a(href="javascript:showMore()")
+        span.glyphicon.glyphicon-th(aria-hidden="true")
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  #my-slide.carousel.slide(data-ride="carousel")
+    ol.carousel-indicators
+      li.active(data-target="#my-slide", data-slide-to="0")
+      li(data-target="#my-slide", data-slide-to="1")
+      li(data-target="#my-slide", data-slide-to="2")
+
+    .carousel-inner(role="listbox")
+      .item.active
+        img(src="/img/slide-1.jpg", alt="slide-1")
+        .carousel-caption
+      .item
+        img(src="/img/slide-2.jpg", alt="slide-2")
+        .carousel-caption
+      .item
+        img(src="/img/slide-3.jpg", alt="slide-3")
+        .carousel-caption
+
+    a.left.carousel-control(href="#my-slide", role="button", data-slide="prev")
+      span.glyphicon.glyphicon-chevron-left(aria-hidden="true")
+      span.sr-only Previous
+    a.right.carousel-control(href="#my-slide", role="button", data-slide="prev")
+      span.glyphicon.glyphicon-chevron-right(aria-hidden="true")
+      span.sr-only next
+
+  .container
+    each val in categoeries
+      .col-sm-4
+        + panel(val[0], val[1], val[2])

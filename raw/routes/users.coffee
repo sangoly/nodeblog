@@ -2,7 +2,7 @@ express = require 'express'
 router = express.Router()
 Snow = require '../models/snow'
 
-## GET users listing. 
+## login handler. 
 router.get '/login', (req, res, next)->
     res.render 'users/login', {title: "登录"}
 
@@ -18,5 +18,12 @@ router.post '/login', (req, res, next)->
                 console.log err
         res.redirect '/users/login'
     res.render 'users/login', {err: err}
+
+## register handler
+router.get '/register', (req, res, next)->
+    res.render 'users/register', {title: "注册"}
+    
+router.post '/register', (req, res, next)->
+    res.respone 'texttext'
 
 module.exports = router

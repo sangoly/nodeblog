@@ -1,5 +1,5 @@
 -var heads = ["首页", "轻松时刻", "智慧空间"]
--var footer_words = "我是页脚，不知道要写啥，先放这"
+-var footer_words = "祝面试成功！加勒个油！！！"
 
 doctype html
 html
@@ -8,16 +8,16 @@ html
     link(rel='stylesheet', href='/css/style.css')
     link(rel='stylesheet', href='/css/bootstrap.min.css')
   body
-    block header
-      #header
+    #header
+      block header
         .container(role="navigation")
           ul.nav.nav-tabs
             -each val, index in heads
               li(role="presentation") 
                 if index == 0
-                  a.active(href="#") #{heads[index]}
+                  a.active(href="#") #{val}
                 else
-                  a(href="#") #{heads[index]}
+                  a(href="#") #{val}
             div.auth
               a.btn.btn-primary(href="/users/login") 登录
               &nbsp;
@@ -27,14 +27,15 @@ html
       if err
         .alert.alert-warning.container(role="alert") #{err}
 
-    block content
+    #content.container
+      block content
+
+    #footer
+      block footer
+        p #{footer_words}
 
     block script
       script(src="/js/min/jquery-1.11.2.min.js")
       script(src="/js/min/bootstrap.min.js")
       script(src="/js/min/avalon.min.js")
       script(src="/js/min/nodeblog.min.js")
-
-    block footer
-      #footer
-        | #{footer_words}

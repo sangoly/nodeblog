@@ -37,6 +37,16 @@
     });
   });
 
+  router.get('/register', function(req, res, next) {
+    return res.render('users/register', {
+      title: "注册"
+    });
+  });
+
+  router.post('/register', function(req, res, next) {
+    return res.respone('texttext');
+  });
+
   module.exports = router;
 
 }).call(this);

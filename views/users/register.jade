@@ -1,12 +1,4 @@
 extends ../layout
 
 block content
-    if err
-        .alert.alert-warning(role="alert") err
-    form.form-inline(action='/users/login',method='post')
-        input.form-control(name="name",type="text")
-        input.form-control(name="passwd",type="password")
-        input.btn.btn-primary(type="submit",value="提交")
-        &nbsp;
-        a.btn.btn-primary(href="/register") 注册
-
+  h1 test
